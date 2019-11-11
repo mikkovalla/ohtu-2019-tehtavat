@@ -1,6 +1,6 @@
 package ohtu.verkkokauppa;
 
-import main.java.ohtu.verkkokauppa.IViitegeneraattori;
+import ohtu.verkkokauppa.IViitegeneraattori;
 
 public class Viitegeneraattori implements IViitegeneraattori{
 

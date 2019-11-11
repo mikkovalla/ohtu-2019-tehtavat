@@ -2,7 +2,7 @@ package ohtu.verkkokauppa;
 
 import java.util.*;
 
-import main.java.ohtu.verkkokauppa.IVarasto;
+import ohtu.verkkokauppa.IVarasto;
 
 public class Varasto implements IVarasto{
 

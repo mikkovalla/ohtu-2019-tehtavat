@@ -1,5 +1,9 @@
 package ohtu.verkkokauppa;
 
+import ohtu.verkkokauppa.IVarasto;
+import ohtu.verkkokauppa.IPankki;
+import ohtu.verkkokauppa.IViitegeneraattori;
+
 public class Kauppa {
 
     private IVarasto varasto;

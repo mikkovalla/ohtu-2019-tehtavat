@@ -1,4 +1,4 @@
-package main.java.ohtu.verkkokauppa;
+package ohtu.verkkokauppa;
 import java.util.ArrayList;
 
 public interface IKirjanpito {

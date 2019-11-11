@@ -1,6 +1,6 @@
 package ohtu.verkkokauppa;
 
-import main.java.ohtu.verkkokauppa.IPankki;
+import ohtu.verkkokauppa.IPankki;
 
 public class Pankki implements IPankki{
 

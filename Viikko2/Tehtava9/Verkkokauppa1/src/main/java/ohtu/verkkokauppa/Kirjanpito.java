@@ -3,7 +3,7 @@ package ohtu.verkkokauppa;
 
 import java.util.ArrayList;
 
-import main.java.ohtu.verkkokauppa.IKirjanpito;
+import ohtu.verkkokauppa.IKirjanpito;
 
 public class Kirjanpito implements IKirjanpito {
     private static Kirjanpito instance;
