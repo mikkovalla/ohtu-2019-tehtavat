@@ -1,11 +1,16 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
 import ohtu.verkkokauppa.IVarasto;
 
+@Component
 public class Varasto implements IVarasto{
     
+    @Autowired
     private IKirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
