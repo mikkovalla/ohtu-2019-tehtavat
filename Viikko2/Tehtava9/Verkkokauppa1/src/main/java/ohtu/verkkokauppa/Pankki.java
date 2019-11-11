@@ -4,19 +4,10 @@ import ohtu.verkkokauppa.IPankki;
 
 public class Pankki implements IPankki{
 
-    private static Pankki instanssi;
-
-    public static Pankki getInstance() {
-        if (instanssi == null) {
-            instanssi = new Pankki();
-        }
-
-        return instanssi;
-    }
     private IKirjanpito kirjanpito;
 
-    public Pankki() {
-        kirjanpito = Kirjanpito.getInstance();
+    public Pankki(IKirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
     }
 
     @Override
