@@ -11,14 +11,19 @@ public class Main {
         String bodyText = Request.Get(url).execute().returnContent().asString();
                 
         System.out.println("json-muotoinen data:");
-        System.out.println( bodyText );
+        //System.out.println( bodyText );
 
         Gson mapper = new Gson();
         Player[] players = mapper.fromJson(bodyText, Player[].class);
         
-        System.out.println("Oliot:");
-        for (Player player : players) {
-            System.out.println(player);
+        System.out.println("Finnish Players: ");
+        System.out.println("--------------------------------------------");
+
+        for (Player p : players) {
+            if(p.getNationality().equals("FIN")){
+                continue;
+            }
+            System.out.println(p);
         }   
     }
   
