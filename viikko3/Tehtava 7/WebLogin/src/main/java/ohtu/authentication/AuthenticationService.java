@@ -43,7 +43,7 @@ public class AuthenticationService {
         }
 
         if (!password.matches(".*[\\d].*")) {
-            status.addError("username has to have at least one digit");
+            status.addError("password has to have at least one digit");
         }
 
         if (!password.equals(passwordConfirmation)) {
