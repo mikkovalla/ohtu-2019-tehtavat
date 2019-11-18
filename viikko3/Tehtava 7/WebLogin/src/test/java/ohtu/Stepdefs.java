@@ -80,6 +80,11 @@ public class Stepdefs {
     public void aValidUsernameAndPasswordAndNotMatchingPasswordConfirmationAreEntered(String username, String password, String passwordConfirmation) {
         registerWith(username, password, passwordConfirmation);
     }
+
+    @Then("a new user is created")
+    public void newUserIsCreated() {
+        pageHasContent("Welcome to Ohtu Application!");
+    }
     
     @After
     public void tearDown(){
