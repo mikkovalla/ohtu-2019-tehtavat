@@ -12,7 +12,7 @@ Feature: A new user account can be created if a proper unused username and passw
 
     Scenario: creation fails with correct username and too short password
         Given command new user is selected
-        When a valid username "harri" and too short password "harri" are entered
+        When a valid username "harri" and too short password "harri" are entered and matching password confirmation are entered
         Then user is not created and error "password should have at least 8 characters" is reported   
 
     Scenario: creation fails when password and password confirmation do not match
@@ -23,11 +23,11 @@ Feature: A new user account can be created if a proper unused username and passw
     Scenario: user can login with successfully generated account
         Given user with username "lea" with password "salainen1" is successfully created
         And   login is selected
-        When  ...
-        Then  ...  
+        When  created username "lea" and password "salainen1" are entered
+        Then  user is logged in  
 
     Scenario: user can not login with account that is not successfully created
         Given user with username "aa" and password "bad" is tried to be created
         And   login is selected
-        When  ...
-        Then  ... 
+        When  an invalid username "aa" and password "bad" are entered
+        Then  user is not logged in and error message is given 
