@@ -60,6 +60,26 @@ public class Stepdefs {
     public void validUsernameAndValidPasswordAndConfirmationAreGiven(String username, String password) {
         registerWith(username, password);
     }  
+
+    @Then("user is not created and error {string} is reported")
+    public void userIsNotCreatedAndErrorIsReported(String string) {
+        pageHasContent(string);
+    }
+
+    @When("too short username {string} and password {string} and matching password confirmation are entered")
+    public void tooShortUsernameAndValidPasswordAndConfirmationAreGiven(String username, String password) {
+        registerWith(username, password);
+    } 
+
+    @When("a valid username {string} and too short password {string} and matching password confirmation are entered")
+    public void validUsernameAndTooShortPasswordAndConfirmationAreGiven(String username, String password) {
+        registerWith(username, password);
+    } 
+
+    @When("a valid username {string} and password {string} and not matching password confirmation {string} are entered")
+    public void aValidUsernameAndPasswordAndNotMatchingPasswordConfirmationAreEntered(String username, String password, String passwordConfirmation) {
+        registerWith(username, password, passwordConfirmation);
+    }
     
     @After
     public void tearDown(){
