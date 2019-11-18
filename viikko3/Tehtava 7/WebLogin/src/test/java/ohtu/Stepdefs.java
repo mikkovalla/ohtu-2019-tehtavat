@@ -85,6 +85,21 @@ public class Stepdefs {
     public void newUserIsCreated() {
         pageHasContent("Welcome to Ohtu Application!");
     }
+
+    @When("created username {string} and password {string} are entered")
+    public void createdUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+
+    @When("nonexistent username {string} and password {string} are entered")
+    public void nonexistentUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+
+    @Then("user is logged in")
+    public void userIsSuccesfullyLoggedIn() {
+        pageHasContent("Welcome to Ohtu Application!");
+    }
     
     @After
     public void tearDown(){
