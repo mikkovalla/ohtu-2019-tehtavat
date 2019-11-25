@@ -68,33 +68,22 @@ public class IntJoukko {
         this.alkioidenLkm--;
     }
 
-    private void kopioiTaulukko(int[] vanha, int[] uusi) {
-        for (int i = 0; i < vanha.length; i++) {
-            uusi[i] = vanha[i];
-        }
-
-    }
-
     public int mahtavuus() {
-        return alkioidenLkm;
+        return this.alkioidenLkm;
     }
 
 
     @Override
     public String toString() {
-        if (alkioidenLkm == 0) {
-            return "{}";
-        } else if (alkioidenLkm == 1) {
-            return "{" + ljono[0] + "}";
-        } else {
-            String tuotos = "{";
-            for (int i = 0; i < alkioidenLkm - 1; i++) {
-                tuotos += ljono[i];
-                tuotos += ", ";
+        if (alkioidenLkm == 0) return "{}";
+        else {
+            StringBuilder joukko = new StringBuilder(" { ");
+            for(int i = 0; i < this.alkioidenLkm; i++) {
+                if(i > 0) joukko.append(", ");
+                joukko.append(this.ljono[i]);
             }
-            tuotos += ljono[alkioidenLkm - 1];
-            tuotos += "}";
-            return tuotos;
+            joukko.append(" } ");
+            return joukko.toString();
         }
     }
 
