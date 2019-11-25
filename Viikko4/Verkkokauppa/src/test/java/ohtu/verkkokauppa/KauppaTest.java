@@ -59,6 +59,7 @@ public class KauppaTest {
         this.kauppa.tilimaksu("pekka", "12345");
         verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(7));
     }
+
     /*aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta, jota on varastossa tarpeeksi ja suoritetaan ostos, 
     varmista että kutsutaan pankin metodia tilisiirto oikealla asiakkaalla, tilinumerolla ja summalla*/
     @Test
@@ -73,4 +74,19 @@ public class KauppaTest {
         verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(10));
     }
 
+    /*aloitetaan asiointi, koriin lisätään tuote, jota on varastossa tarpeeksi ja tuote joka on loppu ja suoritetaan ostos, 
+    varmista että kutsutaan pankin metodia tilisiirto oikealla asiakkaalla, tilinumerolla ja summalla*/
+    @Test
+    public void ostetaanKaksiEriTuotettaJoistaToinenOnLoppuVarastosta() {
+        when(this.varasto.saldo(1)).thenReturn(5);
+        when(this.varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+        when(this.varasto.saldo(2)).thenReturn(0);
+        when(this.varasto.haeTuote(2)).thenReturn(new Tuote(2, "leipä", 2));
+
+        this.kauppa.aloitaAsiointi();
+        this.kauppa.lisaaKoriin(1);
+        this.kauppa.lisaaKoriin(2);
+        this.kauppa.tilimaksu("pekka", "12345");
+        verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(5));
+    }
 }
