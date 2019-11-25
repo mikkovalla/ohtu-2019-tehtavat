@@ -77,12 +77,12 @@ public class IntJoukko {
     public String toString() {
         if (alkioidenLkm == 0) return "{}";
         else {
-            StringBuilder joukko = new StringBuilder(" { ");
+            StringBuilder joukko = new StringBuilder("{");
             for(int i = 0; i < this.alkioidenLkm; i++) {
                 if(i > 0) joukko.append(", ");
                 joukko.append(this.ljono[i]);
             }
-            joukko.append(" } ");
+            joukko.append("}");
             return joukko.toString();
         }
     }
