@@ -29,15 +29,16 @@ public class KauppaTest {
 
     @Test
     public void ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan() {
-       when(this.varasto.saldo(1)).thenReturn(10);
-
+        when(this.varasto.saldo(1)).thenReturn(10);
+        when(this.varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
         // tehdään ostokset
-        //k.aloitaAsiointi();
-        //k.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        //k.tilimaksu("pekka", "12345");
+        this.kauppa.aloitaAsiointi();
+        this.kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        this.kauppa.tilimaksu("pekka", "12345");
 
         // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
         //verify(pankki).tilisiirto(anyString(), anyInt(), anyString(), anyString(),anyInt());   
         // toistaiseksi ei välitetty kutsussa käytetyistä parametreista
+        verify(this.pankki).tilisiirto(eq("pekka"), eq(42),eq("12345"), anyString(), eq(5));  
     }
 }
