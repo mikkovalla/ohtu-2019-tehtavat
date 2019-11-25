@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-25T19:03:51" hostname="DESKTOP-B0REBA4" time="0.58">
+<testsuite name="ohtu.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-25T19:05:46" hostname="DESKTOP-B0REBA4" time="0.477">
   <properties/>
-  <testcase name="kutsutaanPankkiaOikeallaTilinumerollaJaSummalla" classname="ohtu.KauppaTest" time="0.566"/>
+  <testcase name="kutsutaanPankkiaOikeallaTilinumerollaJaSummalla" classname="ohtu.KauppaTest" time="0.463"/>
   <testcase name="pyydetaanUusiViiteJokaiseenMaksuun" classname="ohtu.KauppaTest" time="0.002"/>
   <testcase name="kutsutaanPankkiaOikeallaTilinumerolla" classname="ohtu.KauppaTest" time="0.001"/>
   <testcase name="kaytetaanMaksussaPalautettuaViiteta" classname="ohtu.KauppaTest" time="0.006"/>
