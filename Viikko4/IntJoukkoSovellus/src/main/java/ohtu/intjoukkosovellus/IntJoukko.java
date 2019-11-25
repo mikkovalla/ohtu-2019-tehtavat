@@ -46,17 +46,14 @@ public class IntJoukko {
     }
 
     public boolean kuuluu(int luku) {
-        int on = 0;
-        for (int i = 0; i < alkioidenLkm; i++) {
-            if (luku == ljono[i]) {
-                on++;
-            }
+        return this.luvunIndeksi(luku) >= 0;
+    }
+
+    public int luvunIndeksi(int luku) {
+        for(int i = 0; i < this.alkioidenLkm; i++) {
+            if(this.ljono[i] == luku) return i;
         }
-        if (on > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return -1;
     }
 
     public boolean poista(int luku) {
