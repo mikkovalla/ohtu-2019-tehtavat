@@ -89,4 +89,19 @@ public class KauppaTest {
         this.kauppa.tilimaksu("pekka", "12345");
         verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(5));
     }
+
+    /*Varmistetaan että aloitaAsiointi kutsu nollaa edellisen ostoskorin tiedot*/
+    @Test
+    public void aloitaAsiointiKutsuNollaaEdellisenOstosKorin() {
+        when(this.varasto.saldo(1)).thenReturn(10);
+        when(this.varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+    
+        this.kauppa.aloitaAsiointi();
+        this.kauppa.lisaaKoriin(1);
+
+        this.kauppa.aloitaAsiointi();
+        this.kauppa.lisaaKoriin(1);
+        this.kauppa.tilimaksu("pekka", "12345");
+        verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(5));        
+    }
 }
