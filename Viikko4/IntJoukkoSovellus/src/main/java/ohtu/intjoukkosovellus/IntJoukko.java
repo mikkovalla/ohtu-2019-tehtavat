@@ -1,6 +1,8 @@
 
 package ohtu.intjoukkosovellus;
 
+import java.util.Arrays;
+
 public class IntJoukko {
 
     public final static int KAPASITEETTI = 5; // aloitustalukon koko
@@ -88,11 +90,7 @@ public class IntJoukko {
     }
 
     public int[] toIntArray() {
-        int[] taulu = new int[alkioidenLkm];
-        for (int i = 0; i < taulu.length; i++) {
-            taulu[i] = ljono[i];
-        }
-        return taulu;
+        return Arrays.copyOf(this.ljono, this.alkioidenLkm);
     }
    
 
