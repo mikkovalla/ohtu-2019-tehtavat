@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.ohtu.verkkokauppa.KauppaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-11-25T20:12:46" hostname="DESKTOP-B0REBA4" time="0.487">
+<testsuite name="test.java.ohtu.verkkokauppa.KauppaTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-11-25T20:15:18" hostname="DESKTOP-B0REBA4" time="0.524">
   <properties/>
-  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.484"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.516"/>
   <testcase name="ostetaanKaksiEriTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="ostetaanKaksiSamaaTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

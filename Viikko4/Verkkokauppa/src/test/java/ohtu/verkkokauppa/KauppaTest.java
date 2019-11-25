@@ -59,4 +59,18 @@ public class KauppaTest {
         this.kauppa.tilimaksu("pekka", "12345");
         verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(7));
     }
+    /*aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta, jota on varastossa tarpeeksi ja suoritetaan ostos, 
+    varmista että kutsutaan pankin metodia tilisiirto oikealla asiakkaalla, tilinumerolla ja summalla*/
+    @Test
+    public void ostetaanKaksiSamaaTuotetta() {
+        when(this.varasto.saldo(1)).thenReturn(10);
+        when(this.varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+    
+        this.kauppa.aloitaAsiointi();
+        this.kauppa.lisaaKoriin(1);
+        this.kauppa.lisaaKoriin(1);
+        this.kauppa.tilimaksu("pekka", "12345");
+        verify(this.pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(10));
+    }
+
 }
