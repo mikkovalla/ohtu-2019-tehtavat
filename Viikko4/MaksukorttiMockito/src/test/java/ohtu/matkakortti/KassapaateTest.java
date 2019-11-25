@@ -45,7 +45,7 @@ public class KassapaateTest {
     public void lataaKortille() {
         int summa = 100;
         this.kassa.lataa(this.kortti, summa);
-        verify(this.kortti, times(0)).lataa(anyInt());
+        verify(this.kortti, times(1)).lataa(eq(summa));
     }
       
 }
