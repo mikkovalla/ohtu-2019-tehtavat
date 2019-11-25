@@ -40,5 +40,12 @@ public class KassapaateTest {
         verify(kortti, times(1)).getSaldo();
         verify(kortti, times(0)).osta(anyInt());
     }
+
+    @Test
+    public void lataaKortille() {
+        int summa = 100;
+        this.kassa.lataa(this.kortti, summa);
+        verify(this.kortti, times(0)).lataa(anyInt());
+    }
       
 }
