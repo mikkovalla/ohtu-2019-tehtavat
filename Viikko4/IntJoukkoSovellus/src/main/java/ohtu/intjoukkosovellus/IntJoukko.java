@@ -114,20 +114,11 @@ public class IntJoukko {
             if(b.kuuluu(indeksi)) y.lisaa(indeksi);
         }
         return y;
-
     }
     
     public static IntJoukko erotus ( IntJoukko a, IntJoukko b) {
-        IntJoukko z = new IntJoukko();
-        int[] aTaulu = a.toIntArray();
-        int[] bTaulu = b.toIntArray();
-        for (int i = 0; i < aTaulu.length; i++) {
-            z.lisaa(aTaulu[i]);
-        }
-        for (int i = 0; i < bTaulu.length; i++) {
-            z.poista(bTaulu[i]);
-        }
- 
+        IntJoukko z = IntJoukko.kopioi(a);
+        for(int i = 0; i < b.alkioidenLkm; i++) z.poista(b.ljono[i]);
         return z;
     }
         
