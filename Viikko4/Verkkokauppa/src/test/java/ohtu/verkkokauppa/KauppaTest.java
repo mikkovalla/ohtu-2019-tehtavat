@@ -25,6 +25,7 @@ public class KauppaTest {
         this.pankki = mock(Pankki.class);
         this.viite = mock(Viitegeneraattori.class);
         this.kauppa = new Kauppa(this.varasto, this.pankki, this.viite);
+        when(this.viite.uusi()).thenReturn(42);
     }
 
     @Test
