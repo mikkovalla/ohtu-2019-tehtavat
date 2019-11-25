@@ -109,14 +109,9 @@ public class IntJoukko {
 
     public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
         IntJoukko y = new IntJoukko();
-        int[] aTaulu = a.toIntArray();
-        int[] bTaulu = b.toIntArray();
-        for (int i = 0; i < aTaulu.length; i++) {
-            for (int j = 0; j < bTaulu.length; j++) {
-                if (aTaulu[i] == bTaulu[j]) {
-                    y.lisaa(bTaulu[j]);
-                }
-            }
+        for(int i = 0; i < a.alkioidenLkm; i++){
+            int indeksi = a.ljono[i];
+            if(b.kuuluu(indeksi)) y.lisaa(indeksi);
         }
         return y;
 
