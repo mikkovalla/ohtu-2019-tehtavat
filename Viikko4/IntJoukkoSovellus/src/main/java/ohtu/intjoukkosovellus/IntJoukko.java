@@ -14,56 +14,35 @@ public class IntJoukko {
     }
 
     public IntJoukko(int kapasiteetti) {
-        if (kapasiteetti < 0) {
-            return;
-        }
-        ljono = new int[kapasiteetti];
-        for (int i = 0; i < ljono.length; i++) {
-            ljono[i] = 0;
-        }
-        alkioidenLkm = 0;
-        this.kasvatuskoko = OLETUSKASVATUS;
-
+        this(IntJoukko.OLETUSKASVATUS, IntJoukko.KAPASITEETTI);
     }
         
     public IntJoukko(int kapasiteetti, int kasvatuskoko) {
         if (kapasiteetti < 0) {
-            throw new IndexOutOfBoundsException("Kapasitteetti väärin");//heitin vaan jotain :D
+            throw new IndexOutOfBoundsException("Kapasitteetti väärin");
         }
         if (kasvatuskoko < 0) {
-            throw new IndexOutOfBoundsException("kapasiteetti2");//heitin vaan jotain :D
-        }
-        ljono = new int[kapasiteetti];
-        for (int i = 0; i < ljono.length; i++) {
-            ljono[i] = 0;
+            throw new IndexOutOfBoundsException("kasvatuskoko väärin");
         }
         alkioidenLkm = 0;
         this.kasvatuskoko = kasvatuskoko;
-
     }
 
     public boolean lisaa(int luku) {
+        if(this.kuuluu(luku)) return false;
+        if(this.alkioidenLkm == this.ljono.length) {
+            this.kasvataTaulukkoa();
+        }
 
-        int eiOle = 0;
-        if (alkioidenLkm == 0) {
-            ljono[0] = luku;
-            alkioidenLkm++;
-            return true;
-        } else {
-        }
-        if (!kuuluu(luku)) {
-            ljono[alkioidenLkm] = luku;
-            alkioidenLkm++;
-            if (alkioidenLkm % ljono.length == 0) {
-                int[] taulukkoOld = new int[ljono.length];
-                taulukkoOld = ljono;
-                kopioiTaulukko(ljono, taulukkoOld);
-                ljono = new int[alkioidenLkm + kasvatuskoko];
-                kopioiTaulukko(taulukkoOld, ljono);
-            }
-            return true;
-        }
-        return false;
+        this.ljono[this.alkioidenLkm++] = luku;
+
+        return true;
+    }
+
+    private void kasvataTaulukkoa() {
+        int[] uusitaulukko = new int[this.ljono.length + this.kasvatuskoko];
+        System.arraycopy(this.ljono, 0, uusitaulukko, 0, this.ljono.length);
+        this.ljono = uusitaulukko;
     }
 
     public boolean kuuluu(int luku) {
