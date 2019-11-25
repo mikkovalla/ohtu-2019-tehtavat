@@ -93,18 +93,18 @@ public class IntJoukko {
         return Arrays.copyOf(this.ljono, this.alkioidenLkm);
     }
    
-
     public static IntJoukko yhdiste(IntJoukko a, IntJoukko b) {
-        IntJoukko x = new IntJoukko();
-        int[] aTaulu = a.toIntArray();
-        int[] bTaulu = b.toIntArray();
-        for (int i = 0; i < aTaulu.length; i++) {
-            x.lisaa(aTaulu[i]);
-        }
-        for (int i = 0; i < bTaulu.length; i++) {
-            x.lisaa(bTaulu[i]);
-        }
-        return x;
+        IntJoukko joukko = IntJoukko.kopioi(a);
+        for(int i = 0; i < b.alkioidenLkm; i++) joukko.lisaa(b.ljono[i]);
+        return joukko;
+    }
+
+    public static IntJoukko kopioi(IntJoukko a) {
+        //Kopioi suoraan taulukko a b:hen
+        IntJoukko b = new IntJoukko(a.alkioidenLkm);
+        System.arraycopy(a.ljono, 0, b.ljono, 0, a.alkioidenLkm);
+        b.alkioidenLkm = a.alkioidenLkm;
+        return b;
     }
 
     public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
