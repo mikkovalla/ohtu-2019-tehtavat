@@ -47,5 +47,11 @@ public class KassapaateTest {
         this.kassa.lataa(this.kortti, summa);
         verify(this.kortti, times(1)).lataa(eq(summa));
     }
+
+    @Test
+    public void lataaKortilleEiToimiJosSummaOnNegatiivinen() {
+        this.kassa.lataa(this.kortti, 0);
+        verify(this.kortti, times(0)).lataa(anyInt());
+    }
       
 }
