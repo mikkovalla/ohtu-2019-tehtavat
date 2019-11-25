@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.ohtu.verkkokauppa.KauppaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-11-25T20:25:37" hostname="DESKTOP-B0REBA4" time="0.494">
+<testsuite name="test.java.ohtu.verkkokauppa.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-25T20:28:36" hostname="DESKTOP-B0REBA4" time="0.48">
   <properties/>
-  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.482"/>
+  <testcase name="varmistaViiteNumeroJokaiselleMaksutapahtumalle" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.469"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.001"/>
   <testcase name="aloitaAsiointiKutsuNollaaEdellisenOstosKorin" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.002"/>
-  <testcase name="ostetaanKaksiEriTuotettaJoistaToinenOnLoppuVarastosta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.003"/>
-  <testcase name="ostetaanKaksiEriTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.002"/>
-  <testcase name="ostetaanKaksiSamaaTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="ostetaanKaksiEriTuotettaJoistaToinenOnLoppuVarastosta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="ostetaanKaksiEriTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="ostetaanKaksiSamaaTuotetta" classname="test.java.ohtu.verkkokauppa.KauppaTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
