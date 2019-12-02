@@ -1,6 +1,11 @@
 {
+    "jäbä": [{
+        "nimi": "puuppa",
+        "ika": 51,
+        "ammatti": "duunari"
+    }],
     "nimi": "puuppa",
-    "ika" : 51,
+    "ika": 51,
     "ammatti": "duunari"
 
 }
