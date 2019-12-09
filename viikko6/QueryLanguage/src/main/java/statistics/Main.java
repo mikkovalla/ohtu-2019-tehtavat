@@ -14,7 +14,7 @@ public class Main {
 
         QueryBuilder query = new QueryBuilder();
  
-        Matcher m = query.playsIn("NYR").hasAtLeast(10, "goals").build();
+        Matcher m = query.playsIn("NYR").hasAtLeast(5, "goals").hasFewerThan(7, "goals").build();
         
         for (Player player : stats.matches(m)) {
             System.out.println(player);

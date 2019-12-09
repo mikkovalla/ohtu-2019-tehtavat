@@ -7,7 +7,6 @@ import statistics.matcher.HasAtLeast;
 import statistics.matcher.HasFewerThan;
 import statistics.matcher.Matcher;
 import statistics.matcher.PlaysIn;
-import statistics.Player;
 
 public class QueryBuilder {
     
@@ -15,10 +14,6 @@ public class QueryBuilder {
 
     public QueryBuilder() {
         this.matcher = new ArrayDeque<>();
-    }
-
-    private QueryBuilder queryBuilder() {
-        return new QueryBuilder();
     }
 
     public Matcher build() {
@@ -33,6 +28,10 @@ public class QueryBuilder {
     public QueryBuilder hasAtLeast(int value, String category) {
 		this.matcher.add(new HasAtLeast(value, category));
 		return this;
+    }
+    
+    public QueryBuilder hasFewerThan(int value, String category) {
+		this.matcher.add(new HasFewerThan(value, category));
+		return this;
 	}
-
 }
