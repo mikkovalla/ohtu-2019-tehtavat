@@ -26,8 +26,13 @@ public class QueryBuilder {
 	}
 
     public QueryBuilder playsIn(String team) {
-    this.matcher.add(new PlaysIn(team));
-    return this;
+        this.matcher.add(new PlaysIn(team));
+        return this;
     }
+
+    public QueryBuilder hasAtLeast(int value, String category) {
+		this.matcher.add(new HasAtLeast(value, category));
+		return this;
+	}
 
 }
