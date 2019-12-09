@@ -1,6 +1,7 @@
 package statistics;
 
 import statistics.matcher.*;
+import statistics.querybuilder.QueryBuilder;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,14 +12,9 @@ public class Main {
 
         Statistics stats = new Statistics(new PlayerReaderImpl(url));
 
-        Matcher m = new And(
-            new HasAtLeast(20, "points"),
-            new Or( 
-                new PlaysIn("NYR"),
-                new PlaysIn("NYI"),
-                new PlaysIn("NJD")
-            )
-        ); 
+        QueryBuilder query = new QueryBuilder();
+ 
+        Matcher m = query.playsIn("NYR").build();
         
         for (Player player : stats.matches(m)) {
             System.out.println(player);
